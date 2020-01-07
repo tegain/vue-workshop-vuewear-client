@@ -1,4 +1,6 @@
-# client
+# Vue JS Training - Vuewear
+
+> Heavily inspired from [Sarah Drasner's ecommerce-netlify](https://github.com/sdras/ecommerce-netlify)
 
 ## Project setup
 ```
