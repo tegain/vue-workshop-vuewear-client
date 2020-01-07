@@ -1,9 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <app-header />
+
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
+
+<script>
+import AppHeader from '@/components/shell/app-header';
+
+export default {
+  name: 'App',
+
+  components: {
+    AppHeader
+  },
+
+  mounted() {
+    this.fetchProducts();
+  },
+
+  methods: {
+    fetchProducts() {
+      this.$store.dispatch('fetchProducts');
+    }
+  }
+};
+</script>
+
+<style scoped>
+main {
+  margin-top: 4rem;
+}
+</style>
