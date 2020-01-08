@@ -42,6 +42,16 @@ export default new Vuex.Store({
       itemExists
         ? (itemExists.quantity += payload.quantity)
         : state.cart.push(payload);
+
+      localStorage.setItem('cart', JSON.stringify(state.cart));
+    },
+
+    /**
+     * @param {State} state
+     * @param {CartItem[]} cart
+     */
+    setCart(state, cart) {
+      state.cart = cart;
     },
 
     /**
@@ -49,6 +59,7 @@ export default new Vuex.Store({
      */
     clearCart(state) {
       state.cart = [];
+      localStorage.removeItem('cart');
     }
   },
   actions: {

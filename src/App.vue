@@ -18,11 +18,22 @@ export default {
     AppHeader
   },
 
-  mounted() {
+  created() {
+    this.setCartIfStored();
     this.fetchProducts();
   },
 
   methods: {
+    setCartIfStored() {
+      try {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+          this.$store.commit('setCart', JSON.parse(storedCart));
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
+    },
     fetchProducts() {
       this.$store.dispatch('fetchProducts');
     }
