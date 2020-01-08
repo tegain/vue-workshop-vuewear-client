@@ -6,19 +6,6 @@ Vue.use(Vuex);
 
 const productsService = new ProductsService();
 
-/**
- * @typedef {Object} State
- *
- * @property {Product[]} products
- * @property {CartItem[]} cart
- */
-
-/**
- * @typedef {Object} ItemQuantity
- * @property {number} quantity
- * @typedef {Product & ItemQuantity} CartItem
- */
-
 export default new Vuex.Store({
   state: {
     products: [],
@@ -48,7 +35,7 @@ export default new Vuex.Store({
 
     /**
      * @param {State} state
-     * @param {CartItem[]} cart
+     * @param {Cart} cart
      */
     setCart(state, cart) {
       state.cart = cart;

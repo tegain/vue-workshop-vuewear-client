@@ -50,7 +50,7 @@ export default {
       default: () => []
     },
     title: {
-    	type: String,
+      type: String,
       default: null
     }
   },

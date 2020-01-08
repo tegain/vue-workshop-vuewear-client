@@ -17,12 +17,14 @@ const routes = [
   {
     path: '/women',
     name: 'women',
-    component: () => import(/* webpackChunkName: 'women' */ '../views/women.page')
+    component: () =>
+      import(/* webpackChunkName: 'women' */ '../views/women.page')
   },
   {
     path: '/product/:id',
     name: 'product',
-    component: () => import(/* webpackChunkName: 'product' */ '../views/product.page')
+    component: () =>
+      import(/* webpackChunkName: 'product' */ '../views/product.page')
   },
   {
     path: '/cart',
