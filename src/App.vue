@@ -3,7 +3,9 @@
     <app-header />
 
     <main>
-      <router-view />
+      <transition name="route">
+        <router-view />
+      </transition>
     </main>
   </div>
 </template>
@@ -45,5 +47,13 @@ export default {
 <style scoped>
 main {
   margin-top: 4rem;
+}
+.route-enter-active,
+.route-leave-active {
+  transition: opacity 0.5s;
+}
+.route-enter,
+.route-leave-to {
+  opacity: 0;
 }
 </style>
