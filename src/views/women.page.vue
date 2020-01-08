@@ -1,7 +1,7 @@
 <template>
   <div class="women">
     <div class="container">
-      <store-grid :products="products" />
+      <store-grid :products="products" title="Femmes" />
     </div>
   </div>
 </template>

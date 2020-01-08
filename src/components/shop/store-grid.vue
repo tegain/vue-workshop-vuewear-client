@@ -12,6 +12,7 @@
     <div v-else class="empty-message">Pas de produits correspondant</div>
     <div class="aside">
       <div style="margin-bottom: 4rem">
+        <h2 v-if="title">{{ title }}</h2>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
         doloribus esse nihil nisi pariatur qui quidem. Aperiam eius laudantium
         perferendis. Asperiores magni minima nesciunt porro? Aliquam
@@ -47,6 +48,10 @@ export default {
     products: {
       type: Array,
       default: () => []
+    },
+    title: {
+    	type: String,
+      default: null
     }
   },
 
@@ -79,6 +84,10 @@ export default {
 
 .aside {
   width: 25%;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
 }
 
 .content {
