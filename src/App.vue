@@ -31,6 +31,7 @@ export default {
           this.$store.commit('setCart', JSON.parse(storedCart));
         }
       } catch (e) {
+        // eslint-disable-next-line
         console.log(e.message);
       }
     },

@@ -115,7 +115,10 @@ export default new Vuex.Store({
         return 0;
       }
 
-      return state.cart.reduce((acc, next) => acc + (next.quantity * next.price), 0);
+      return state.cart.reduce(
+        (acc, next) => acc + next.quantity * next.price,
+        0
+      );
     }
   }
 });

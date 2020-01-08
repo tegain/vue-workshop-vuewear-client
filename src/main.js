@@ -5,7 +5,7 @@ import router from './router';
 import store from './store';
 
 import './styles/index.scss';
-import './filters';
+import './filters/price';
 
 Vue.config.productionTip = false;
 
