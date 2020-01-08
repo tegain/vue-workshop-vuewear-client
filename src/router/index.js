@@ -5,6 +5,7 @@ import Home from '../views/home.page';
 import Men from '../views/men.page';
 import Women from '../views/women.page';
 import Product from '../views/product.page';
+import Cart from '../views/cart.page';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/product/:id',
     name: 'product',
     component: Product
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: Cart
   }
 ];
 

@@ -46,8 +46,7 @@ p {
 }
 
 a,
-a:active,
-a:visited {
+a:active {
   color: $color-primary;
   text-decoration: none;
   transition: 0.3s all ease;
@@ -70,7 +69,8 @@ button {
   }
 }
 
-.button {
+.button,
+a.button {
   padding: 1rem;
   background: #fff;
   border: 1px solid #000;

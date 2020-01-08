@@ -42,6 +42,13 @@ export default new Vuex.Store({
       itemExists
         ? (itemExists.quantity += payload.quantity)
         : state.cart.push(payload);
+    },
+
+    /**
+     * @param {State} state
+     */
+    clearCart(state) {
+      state.cart = [];
     }
   },
   actions: {
@@ -76,6 +83,28 @@ export default new Vuex.Store({
       return function(id) {
         return state.products.find(product => product._id === id);
       };
+    },
+
+    /**
+     * @param {State} state
+     */
+    getCartCount(state) {
+      if (!state.cart.length) {
+        return 0;
+      }
+
+      return state.cart.reduce((acc, next) => acc + next.quantity, 0);
+    },
+
+    /**
+     * @param {State} state
+     */
+    getCartTotal(state) {
+      if (!state.cart.length) {
+        return 0;
+      }
+
+      return state.cart.reduce((acc, next) => acc + (next.quantity * next.price), 0);
     }
   }
 });

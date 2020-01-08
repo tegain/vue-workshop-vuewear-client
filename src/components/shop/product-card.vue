@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <img class="product-picture" :src="pictureUrl" :alt="product.title" />
+    <img class="product-picture" :src="pictureUrl" :alt="product.title" height="200" />
 
     <h4>{{ product.title }}</h4>
 
@@ -26,10 +26,12 @@
 
 <script>
 import StarRating from 'vue-star-rating/src/star-rating';
-import { environment } from '@/environment';
+import { pictureUrl } from '@/mixins/picture-url.mixin';
 
 export default {
   name: 'ProductCard',
+
+  mixins: [pictureUrl],
 
   components: {
     StarRating
@@ -39,12 +41,6 @@ export default {
     product: {
       type: Object,
       required: true
-    }
-  },
-
-  computed: {
-    pictureUrl() {
-      return `${environment.apiUrl}${this.product.pictureUrl}`;
     }
   }
 };

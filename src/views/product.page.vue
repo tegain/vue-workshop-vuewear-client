@@ -66,10 +66,12 @@
 
 <script>
 import StarRating from 'vue-star-rating/src/star-rating';
-import { environment } from '@/environment';
+import { pictureUrl } from '@/mixins/picture-url.mixin';
 
 export default {
   name: 'Product',
+
+  mixins: [pictureUrl],
 
   components: {
     StarRating
@@ -79,12 +81,6 @@ export default {
     /** @type {Product} */
     product() {
       return this.$store.getters['getProductById'](this.$route.params.id);
-    },
-    pictureUrl() {
-      if (!this.product) {
-        return;
-      }
-      return `${environment.apiUrl}${this.product.pictureUrl}`;
     }
   },
 
