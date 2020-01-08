@@ -4,10 +4,12 @@ const BundleAnalyzer = new BundleAnalyzerPlugin({
   openAnalyzer: false
 });
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
-  parallel: process.env.NODE_ENV !== 'production',
+  parallel: !isProduction,
   configureWebpack: config => {
-    if (process.env.NODE_ENV === 'development') {
+    if (!isProduction) {
       config.plugins.push(BundleAnalyzer);
     }
   },

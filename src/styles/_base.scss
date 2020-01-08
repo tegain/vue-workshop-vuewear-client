@@ -32,6 +32,12 @@ p {
   margin: 20px 0;
 }
 
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 165rem;
+}
+
 *,
 *:before,
 *:after {
@@ -40,8 +46,7 @@ p {
 }
 
 a,
-a:active,
-a:visited {
+a:active {
   color: $color-primary;
   text-decoration: none;
   transition: 0.3s all ease;
@@ -56,6 +61,7 @@ button {
   font-weight: 700;
   font-family: $font-content;
   transition: 0.3s all ease;
+
   &:hover {
     background: black;
     border: 1px solid black;
@@ -63,27 +69,18 @@ button {
   }
 }
 
-button.purchase {
-  background: $color-primary;
-  color: white;
-  font-size: 16px;
-  border: none;
-  &:hover {
-    background: #c14103;
-  }
-}
+.button,
+a.button {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 1.6rem;
+  transition: background .3s;
 
-button.pay-with-stripe {
-  background: black;
-  color: white;
-  font-size: 16px;
-  border: none;
   &:hover {
-    background: #c14103;
-  }
-
-  &:disabled {
-    background: #999;
+    background: #000;
+    color: #fff;
   }
 }
 
