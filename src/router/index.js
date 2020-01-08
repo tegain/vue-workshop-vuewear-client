@@ -1,39 +1,33 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from '../views/home.page';
-import Men from '../views/men.page';
-import Women from '../views/women.page';
-import Product from '../views/product.page';
-import Cart from '../views/cart.page';
-
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: () => import(/* webpackChunkName: 'home' */ '../views/home.page')
   },
   {
     path: '/men',
     name: 'men',
-    component: Men
+    component: () => import(/* webpackChunkName: 'men' */ '../views/men.page')
   },
   {
     path: '/women',
     name: 'women',
-    component: Women
+    component: () => import(/* webpackChunkName: 'women' */ '../views/women.page')
   },
   {
     path: '/product/:id',
     name: 'product',
-    component: Product
+    component: () => import(/* webpackChunkName: 'product' */ '../views/product.page')
   },
   {
     path: '/cart',
     name: 'cart',
-    component: Cart
+    component: () => import(/* webpackChunkName: 'cart' */ '../views/cart.page')
   }
 ];
 
